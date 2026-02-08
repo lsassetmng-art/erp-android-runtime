@@ -1,0 +1,10 @@
+﻿apply plugin: 'com.android.dynamic-feature'
+
+android {
+    compileSdk 34
+    defaultConfig { minSdk 24 }
+}
+
+dependencies {
+    implementation project(':app')
+}
