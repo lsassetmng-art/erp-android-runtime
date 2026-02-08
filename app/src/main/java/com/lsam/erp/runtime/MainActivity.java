@@ -8,6 +8,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+
+import com.lsam.erp.runtime.FeatureFlags;
+import com.lsam.erp.runtime.sales.SalesEntry;
+import com.lsam.erp.runtime.sales.SalesPlaceholderActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,4 +28,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+    private void openSales() {
+        Intent intent = new Intent(SalesEntry.ACTION);
+
+        PackageManager pm = getPackageManager();
+        if (FeatureFlags.SALES_ENABLED &&
+                intent.resolveActivity(pm) != null) {
+            startActivity(intent);
+        } else {
+            startActivity(new Intent(this, SalesPlaceholderActivity.class));
+        }
+    }
+
 }
