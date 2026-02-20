@@ -1,0 +1,7 @@
+{
+  "modules": [
+    { "key": "sales",     "displayName": "Sales",     "enabled": true, "moduleName": "sales",     "installMode": "EXTERNAL_APP" },
+    { "key": "inventory", "displayName": "Inventory", "enabled": true, "moduleName": "inventory", "installMode": "EXTERNAL_APP" },
+    { "key": "audit",     "displayName": "Audit",     "enabled": true, "moduleName": "audit",     "installMode": "EXTERNAL_APP" }
+  ]
+}
